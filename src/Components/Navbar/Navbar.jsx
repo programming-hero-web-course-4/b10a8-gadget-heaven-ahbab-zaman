@@ -39,6 +39,9 @@ const Navbar = () => {
             <li>
               <NavLink to="/dashboard">Dashboard</NavLink>
             </li>
+            <li>
+              <NavLink to="/reviews">Reviews</NavLink>
+            </li>
           </ul>
         </div>
         <div className="navbar-end space-x-4">
@@ -50,6 +53,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };

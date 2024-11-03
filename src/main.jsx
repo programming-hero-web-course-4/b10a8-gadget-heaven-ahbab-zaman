@@ -9,6 +9,7 @@ import Root from './Components/Root/Root';
 import Home from './Components/Home/Home';
 import Statistics from './Components/Statistics/Statistics';
 import Dashboard from './Components/Dashboard/Dashboard';
+import Reviews from './Components/Reviews/Reviews';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path:"/dashboard",
         element:<Dashboard></Dashboard>
+      },
+      {
+        path:"/reviews",
+        element:<Reviews></Reviews>
       }
     ]
   },
