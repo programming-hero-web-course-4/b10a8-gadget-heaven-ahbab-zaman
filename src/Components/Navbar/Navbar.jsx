@@ -1,11 +1,13 @@
 import { IoMenu } from "react-icons/io5";
 import { BsCart4 } from "react-icons/bs";
 import { GrFavorite } from "react-icons/gr";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 const Navbar = () => {
+  const location = useLocation()
+  const homePage = location.pathname === "/"
   return (
     <div>
-      <div className="navbar text-white bg-[#9538E2] px-6">
+      <div className={`navbar ${homePage ? "bg-[#9538E2] text-white" : "bg-white text-black"} px-6`}>
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
