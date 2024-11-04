@@ -7,16 +7,20 @@ const GadgetsCards = () => {
     const {category} = useParams();
     const [gadgets, setGadgets] = useState([]);
     useEffect(()=>{
-        const filteredGadgets = [...data].filter(item => item.category === category)
-
+       if(category){
+        const filteredGadgets = [...data].filter(gadget => gadget.category === category)
         setGadgets(filteredGadgets)
-    },[])
-    console.log(gadgets)
+       } else{
+        setGadgets(data.slice(0,8))
+       }
+    },[category, data])
     return (
-        <div className="text-black grid grid-cols-3">
+        <div className="text-black grid grid-cols-3 space-x-4 space-y-4">
            {
             gadgets.map(gadget => (<GadgetCard gadget={gadget} key={gadget.id}></GadgetCard>))
            }
+           <div>
+           </div>
            
         </div>
     );

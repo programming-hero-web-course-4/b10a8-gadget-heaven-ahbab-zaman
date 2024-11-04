@@ -22,23 +22,24 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <Banner></Banner>
 
-      {/* Products cards section */}
+        <Banner></Banner>
+        {/* Products cards section */}
+        <div className="my-12 space-y-6">
+          <h1 className="text-4xl text-center font-bold">
+            Explore Our Gadgets
+          </h1>
 
-      <div className="my-12 space-y-6">
-        <h1 className="text-4xl text-center font-bold">Explore Our Gadgets</h1>
-
-        <div className="w-11/12 mx-auto flex space-x-6">
-          <div className="w-1/4">
-            <Categories categories={categories}></Categories>
-          </div>
-          <div className="w-3/4">
-          <Outlet></Outlet>
+          <div className="w-11/12 mx-auto flex space-x-6">
+            <div className="w-1/4">
+              <Categories categories={categories}></Categories>
+            </div>
+            <div className="w-3/4">
+              <Outlet></Outlet>
+            </div>
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
