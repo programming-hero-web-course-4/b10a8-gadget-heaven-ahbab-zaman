@@ -6,9 +6,6 @@ export default {
       fontFamily:{
         roboto :[ "Roboto", "sans-serif"],
       },
-      backgroundImage:{
-        banner: "url('../dist/assets/banner.jpg')",
-      }
     },
   },
   plugins: [require("daisyui")],
