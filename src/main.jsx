@@ -29,7 +29,7 @@ const router = createBrowserRouter([
             path: "/gadgetsCards/:category",
             element: <GadgetsCards></GadgetsCards>,
             loader: () => fetch(`../gadgets.json`),
-          }
+          },
         ],
       },
       {
@@ -44,17 +44,17 @@ const router = createBrowserRouter([
         path: "/reviews",
         element: <Reviews></Reviews>,
       },
-      { 
+      {
         path: "/details/:product_id",
         element: <GadgetDetails></GadgetDetails>,
-        loader:()=> fetch("/gadgets.json")
+        loader: () => fetch("/gadgets.json"),
       },
     ],
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
-  </StrictMode>
+    <StrictMode>
+      <RouterProvider router={router}></RouterProvider>
+    </StrictMode>
 );

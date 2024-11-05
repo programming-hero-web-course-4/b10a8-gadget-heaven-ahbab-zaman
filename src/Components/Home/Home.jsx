@@ -1,7 +1,8 @@
 import { Outlet, useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import Categories from "../Categories/Categories";
-// import GadgetsCards from "../GadgetsCards/GadgetsCards";
+
+
 const Home = () => {
   const categories = useLoaderData();
   return (
@@ -23,23 +24,21 @@ const Home = () => {
         </div>
       </div>
 
-        <Banner></Banner>
-        {/* Products cards section */}
-        <div className="my-12 space-y-6">
-          <h1 className="text-4xl text-center font-bold">
-            Explore Our Gadgets
-          </h1>
+      <Banner></Banner>
+      {/* Products cards section */}
+      <div className="my-12 space-y-6">
+        <h1 className="text-4xl text-center font-bold">Explore Our Gadgets</h1>
 
-          <div className="w-11/12 mx-auto flex space-x-6">
-            <div className="w-1/4">
-              <Categories categories={categories}></Categories>
-            </div>
+        <div className="w-11/12 mx-auto flex space-x-6">
+          <div className="w-1/4">
+            <Categories categories={categories}></Categories>
+          </div>
             <div className="w-3/4">
               <Outlet></Outlet>
             </div>
-          </div>
         </div>
       </div>
+    </div>
   );
 };
 

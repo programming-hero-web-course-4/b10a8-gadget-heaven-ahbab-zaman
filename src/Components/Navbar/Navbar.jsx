@@ -2,12 +2,21 @@ import { IoMenu } from "react-icons/io5";
 import { BsCart4 } from "react-icons/bs";
 import { GrFavorite } from "react-icons/gr";
 import { NavLink, useLocation } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AddFavorite, AddNumber } from "../Root/Root";
+
 const Navbar = () => {
-  const location = useLocation()
-  const homePage = location.pathname === "/"
+  const [number, addNumber] = useContext(AddNumber)
+  const [favorite, setFavorite]= useContext(AddFavorite)
+  const location = useLocation();
+  const homePage = location.pathname === "/";
   return (
     <div>
-      <div className={`navbar ${homePage ? "bg-[#9538E2] text-white" : "bg-white text-black"} px-6`}>
+      <div
+        className={`navbar ${
+          homePage ? "bg-[#9538E2] text-white" : "bg-white text-black"
+        } px-6`}
+      >
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -28,7 +37,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-         <h4 className="text-lg font-semibold">Gadget Heaven</h4>
+          <h4 className="text-lg font-semibold">Gadget Heaven</h4>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal space-x-6 px-1">
@@ -46,16 +55,23 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end space-x-4">
-        <div className="flex items-center justify-center rounded-full bg-white p-2">
-        <BsCart4 className="text-lg text-black"></BsCart4>
-        </div>
-          <div className="flex items-center justify-center rounded-full bg-white p-2">
-          <GrFavorite className="text-lg text-black"></GrFavorite>
+        
+          <div className="navbar-end space-x-4">
+            <div className="flex items-center border justify-center rounded-full bg-white p-2 relative">
+              <BsCart4 className="text-xl text-black"></BsCart4>
+              <span className="absolute w-6 h-6 flex items-center justify-center -top-2 -right-4 bg-slate-300 rounded-full p-1">
+                {number}
+              </span>
+            </div>
+            <div className="flex items-center border justify-center rounded-full bg-white p-2 relative">
+              <GrFavorite className="text-xl text-black"></GrFavorite>
+              <span className="absolute w-6 h-6 flex items-center justify-center -top-2 -right-4 bg-slate-300 rounded-full p-1">
+                {favorite}
+              </span>
+            </div>
           </div>
-        </div>
+        
       </div>
-      
     </div>
   );
 };

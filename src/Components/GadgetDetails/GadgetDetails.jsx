@@ -4,25 +4,36 @@ import { PiStarDuotone } from "react-icons/pi";
 import { PiStarHalfDuotone } from "react-icons/pi";
 import { BsCart4 } from "react-icons/bs";
 import { GrFavorite } from "react-icons/gr";
+import { AddFavorite, AddNumber } from "../Root/Root";
+import { useContext } from "react";
 
 const GadgetDetails = () => {
+  const [number, setNumber] = useContext(AddNumber)
+  const [favorite, setFavorite] = useContext(AddFavorite)
   const details = useLoaderData();
   const params = useParams();
-  console.log(params);
+  // const [number, setNumber] = useContext(AddNumber)
   const findGadget = details.find(
     (item) => item.product_id == params.product_id
   );
-  console.log(findGadget);
-  const { product_title,product_image,price,description,specification, availability, rating } = findGadget;
+  const {
+    product_title,
+    product_image,
+    price,
+    description,
+    specification,
+    availability,
+    rating,
+  } = findGadget;
+
   return (
     <div>
       <div className="bg-[#9538E2] py-8 pb-16">
         <div className="space-y-2 text-center w-1/2 mx-auto">
-          <h1 className="text-4xl text-white font-bold">
-          Product Details
-          </h1>
+          <h1 className="text-4xl text-white font-bold">Product Details</h1>
           <p className="text-sm text-slate-300">
-           Explore all the gadgets. To find out the details read the all the specifications.
+            Explore all the gadgets. To find out the details read the all the
+            specifications.
           </p>
           <button className="bg-white px-4 py-2 rounded-full text-[#9538E2] text-sm font-bold ">
             Shop Now
@@ -38,30 +49,56 @@ const GadgetDetails = () => {
             />
             <div className="space-y-2">
               <h1 className="text-xl font-bold">{product_title}</h1>
-              <p className="text-sm font-bold text-gray-500">Price: $ {price}</p>
-              <div class="badge bg-slate-300">{availability ? "In Stock" : "Stock Out"}</div>
-              <p className="text-sm font-semibold text-gray-500">{description}</p>
+              <p className="text-sm font-bold text-gray-500">
+                Price: $ {price}
+              </p>
+              <div class="badge bg-slate-300">
+                {availability ? "In Stock" : "Stock Out"}
+              </div>
+              <p className="text-sm font-semibold text-gray-500">
+                {description}
+              </p>
               <div>
-               <h4 className="text-lg font-bold">Specification :</h4>
-                {
-                    specification.map(item => <li className="list-decimal text-gray-500 text-sm font-semibold">{item}</li>)
-                }
+                <h4 className="text-lg font-bold">Specification :</h4>
+                {specification.map((item) => (
+                  <li className="list-decimal text-gray-500 text-sm font-semibold">
+                    {item}
+                  </li>
+                ))}
               </div>
               <div>
-               <span className="text-lg font-bold flex items-center gap-2">Rating <FcRating></FcRating></span>
+                <span className="text-lg font-bold flex items-center gap-2">
+                  Rating <FcRating></FcRating>
+                </span>
               </div>
               <div className="flex items-center gap-2">
-              <div><PiStarDuotone></PiStarDuotone></div>
-              <div><PiStarDuotone></PiStarDuotone></div>
-              <div><PiStarDuotone></PiStarDuotone></div>
-              <div><PiStarDuotone></PiStarDuotone></div>
-              <div><PiStarHalfDuotone></PiStarHalfDuotone></div>
-              <h4 className="text-sm font-semibold bg-slate-300 rounded-3xl px-[10px] py-[5px]">{rating}</h4>
+                <div>
+                  <PiStarDuotone></PiStarDuotone>
+                </div>
+                <div>
+                  <PiStarDuotone></PiStarDuotone>
+                </div>
+                <div>
+                  <PiStarDuotone></PiStarDuotone>
+                </div>
+                <div>
+                  <PiStarDuotone></PiStarDuotone>
+                </div>
+                <div>
+                  <PiStarHalfDuotone></PiStarHalfDuotone>
+                </div>
+                <h4 className="text-sm font-semibold bg-slate-300 rounded-3xl px-[10px] py-[5px]">
+                  {rating}
+                </h4>
               </div>
-             <div className="flex items-center gap-4">
-                <button className="bg-blue-600 text-white text-sm font-semibold px-3 py-2 rounded-full flex items-center gap-2 ">Add To Cart <BsCart4 className="text-xl"></BsCart4></button>
-                <button className="p-2 border-2 rounded-full"><GrFavorite className="text-xl"></GrFavorite></button>
-             </div>
+              <div className="flex items-center gap-4">
+                <button onClick={()=> setNumber(number + 1)} className="bg-blue-600 text-white text-sm font-semibold px-3 py-2 rounded-full flex items-center gap-2 ">
+                  Add To Cart <BsCart4 className="text-xl"></BsCart4>
+                </button>
+                <button onClick={() => setFavorite(favorite + 1)} className="p-2 border-2 rounded-full">
+                  <GrFavorite className="text-xl"></GrFavorite>
+                </button>
+              </div>
             </div>
           </div>
         </div>
