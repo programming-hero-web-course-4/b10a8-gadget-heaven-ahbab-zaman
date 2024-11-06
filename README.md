@@ -1,8 +1,23 @@
-# React + Vite
+**1. Project Name** : **Gadget Heaven**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**2. Live link** : [https://gadgeheaven.netlify.app/](https://gadgeheaven.netlify.app/)
 
-Currently, two official plugins are available:
+**3. Requirement DOC** : [file:///C:/Programming%20Hero%20(Batch-10)/MIlestone-08/Assignment-08/B10-A8-gadget-heaven/Batch-10_Assignment-08.pdf](<file:///C:/Programming%20Hero%20(Batch-10)/MIlestone-08/Assignment-08/B10-A8-gadget-heaven/Batch-10_Assignment-08.pdf>)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**4. Fundamental concepts** : 1.JSX,
+2.Components,
+3.Props,
+4.React hooks(useState,useEffect, useContext,useNavigate),
+5.Event handling,
+6.React routing,
+7.ContextAPI
+
+**5. I have used context API for handling and managing data in this project.**
+
+**3 key features of this project** :
+
+- View gadget details button.
+- Category button of each card gadget as a sidebar.
+- Add to cart button
+- Add to wishlist button
+- Purchase button
