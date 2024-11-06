@@ -6,13 +6,14 @@ import { BsCart4 } from "react-icons/bs";
 import { GrFavorite } from "react-icons/gr";
 import { AddFavorite, AddNumber } from "../Root/Root";
 import { useContext } from "react";
+import Title from "../Title/Title";
 
 const GadgetDetails = () => {
+  Title("GadgetDetails")
   const [number, setNumber] = useContext(AddNumber)
   const [favorite, setFavorite] = useContext(AddFavorite)
   const details = useLoaderData();
   const params = useParams();
-  // const [number, setNumber] = useContext(AddNumber)
   const findGadget = details.find(
     (item) => item.product_id == params.product_id
   );
@@ -92,10 +93,10 @@ const GadgetDetails = () => {
                 </h4>
               </div>
               <div className="flex items-center gap-4">
-                <button onClick={()=> setNumber(number + 1)} className="bg-blue-600 text-white text-sm font-semibold px-3 py-2 rounded-full flex items-center gap-2 ">
+                <button onClick={()=> setNumber(number + 1)} className="bg-blue-600 text-white text-sm font-semibold px-3 py-2 rounded-full flex items-center gap-2 hover:bg-blue-200 hover:text-slate-700 hover:transition-colors hover:duration-300">
                   Add To Cart <BsCart4 className="text-xl"></BsCart4>
                 </button>
-                <button onClick={() => setFavorite(favorite + 1)} className="p-2 border-2 rounded-full">
+                <button onClick={() => setFavorite(favorite + 1)} className="p-2 border-2 rounded-full hover:bg-slate-300 hover:transition-colors hover:duration-300">
                   <GrFavorite className="text-xl"></GrFavorite>
                 </button>
               </div>

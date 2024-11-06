@@ -1,9 +1,11 @@
 import { Outlet, useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import Categories from "../Categories/Categories";
+import Title from "../Title/Title";
 
 
 const Home = () => {
+  Title("Home")
   const categories = useLoaderData();
   return (
     <div>
