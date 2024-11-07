@@ -2,7 +2,7 @@
 
 **2. Live link** : [https://gadgeheaven.netlify.app/](https://gadgeheaven.netlify.app/)
 
-**3. Requirement DOC** : [Requirement document file](./public/Batch-10_Assignment-08.pdf)
+**3. Requirement DOC** : [Requirement document file](./public/Batch-10_Assignment-08%20(1).pdf)
 
 **4. Fundamental concepts** : 1.JSX,
 2.Components,
