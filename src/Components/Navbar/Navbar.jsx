@@ -37,7 +37,10 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
+          <div className="flex items-center justify-center">
+            <img className="w-12" src="./assets/mobile.png" alt="" />
           <h4 className="text-lg font-semibold">Gadget Heaven</h4>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal space-x-6 px-1">

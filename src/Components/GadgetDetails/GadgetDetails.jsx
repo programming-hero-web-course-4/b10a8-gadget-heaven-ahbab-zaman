@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { FcRating } from "react-icons/fc";
 import { PiStarDuotone } from "react-icons/pi";
 import { PiStarHalfDuotone } from "react-icons/pi";
@@ -9,6 +9,10 @@ import { useContext } from "react";
 import Title from "../Title/Title";
 
 const GadgetDetails = () => {
+  const data = useLoaderData()
+  console.log(data)
+  const param = useParams()
+  console.log(param)
   Title("GadgetDetails")
   const [number, setNumber] = useContext(AddNumber)
   const [favorite, setFavorite] = useContext(AddFavorite)
@@ -26,6 +30,8 @@ const GadgetDetails = () => {
     availability,
     rating,
   } = findGadget;
+
+
 
   return (
     <div>
@@ -93,7 +99,7 @@ const GadgetDetails = () => {
                 </h4>
               </div>
               <div className="flex items-center gap-4">
-                <button onClick={()=> setNumber(number + 1)} className="bg-blue-600 text-white text-sm font-semibold px-3 py-2 rounded-full flex items-center gap-2 hover:bg-blue-200 hover:text-slate-700 hover:transition-colors hover:duration-300">
+          <button onClick={()=> setNumber(number + 1) } className="bg-blue-600 text-white text-sm font-semibold px-3 py-2 rounded-full flex items-center gap-2 hover:bg-blue-200 hover:text-slate-700 hover:transition-colors hover:duration-300">
                   Add To Cart <BsCart4 className="text-xl"></BsCart4>
                 </button>
                 <button onClick={() => setFavorite(favorite + 1)} className="p-2 border-2 rounded-full hover:bg-slate-300 hover:transition-colors hover:duration-300">

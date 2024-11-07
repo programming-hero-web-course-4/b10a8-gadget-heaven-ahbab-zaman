@@ -1,7 +1,6 @@
-import { Navigate, Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const GadgetCard = ({gadget}) => {
-    const navigate = useNavigate()
     const {product_title, price, product_image,product_id} = gadget;
     return (
         <div className="border rounded-xl bg-slate-100 space-y-2 p-4">

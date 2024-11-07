@@ -1,5 +1,3 @@
-import { SlUserFollowing } from "react-icons/sl";
-
 const Review = ({ item }) => {
   console.log(item);
   const { product_title, product_image, rating,
