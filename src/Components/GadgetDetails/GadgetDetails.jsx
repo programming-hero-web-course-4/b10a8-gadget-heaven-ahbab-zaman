@@ -7,7 +7,7 @@ import { GrFavorite } from "react-icons/gr";
 import { AddFavorite, AddNumber } from "../Root/Root";
 import { useContext } from "react";
 import Title from "../Title/Title";
-import { addToCart } from "../../Utilities/Utilities";
+import { addToCart, addToFavorite } from "../../Utilities/Utilities";
 
 
 const GadgetDetails = () => {
@@ -39,6 +39,9 @@ const handleCart = id => {
   addToCart(id)
 }
 
+const handleFavorite = id => {
+  addToFavorite(id)
+}
    
  
 
@@ -111,7 +114,7 @@ const handleCart = id => {
           <button onClick={()=>handleCart(findGadget) } className="bg-blue-600 text-white text-sm font-semibold px-3 py-2 rounded-full flex items-center gap-2 hover:bg-blue-200 hover:text-slate-700 hover:transition-colors hover:duration-300">
                   Add To Cart <BsCart4 className="text-xl"></BsCart4>
                 </button>
-                <button onClick={() => setFavorite(favorite + 1)} className="p-2 border-2 rounded-full hover:bg-slate-300 hover:transition-colors hover:duration-300">
+                <button onClick={() => handleFavorite(findGadget)} className="p-2 border-2 rounded-full hover:bg-slate-300 hover:transition-colors hover:duration-300">
                   <GrFavorite className="text-xl"></GrFavorite>
                 </button>
               </div>

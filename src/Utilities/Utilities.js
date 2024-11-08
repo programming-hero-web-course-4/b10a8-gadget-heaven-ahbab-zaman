@@ -24,6 +24,34 @@ const addToCart = (gadgets) => {
 }
 
 
+// get favorite cart
+const getFavorite = () =>{
+    const allFavorites = localStorage.getItem('favorite');
+    if(allFavorites){
+        const addFavorites = JSON.parse(allFavorites);
+        return addFavorites;
+    }
+    else{
+        return []
+    }
+}
+
+// add favorite cart
+
+const addToFavorite = (gadgets) => {
+    const favorite = getFavorite();
+    const isExist = favorite.find(item => item.product_id == gadgets.product_id);
+    if(isExist){
+        return toast.error('Already existed')
+    }
+    else{
+        favorite.push(gadgets)
+        localStorage.setItem('favorite', JSON.stringify(favorite));
+        toast.success('Added to wish list')
+    }
+}
 
 
-export {addToCart}
+
+
+export {addToCart, addToFavorite,getCarts}

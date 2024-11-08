@@ -13,7 +13,6 @@ import ErrorPage from "./Components/ErrorPage/ErrorPage";
 import { Toaster } from "react-hot-toast";
 import Cart from "./Components/Cart/Cart";
 import Wishlist from "./Components/wishlist/Wishlist";
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,7 +43,22 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard></Dashboard>,
-        loader: () => fetch('/gadgets.json'),
+        loader: () => fetch('../gadgets.json'),
+        children:[
+          {
+            path:"/dashboard",
+            element:<Cart></Cart>,
+            loader:()=>fetch("../gadgets.json")
+          },
+          {
+            path:"/dashboard/cart",
+            element:<Cart></Cart>
+          },
+          {
+            path:"/dashboard/wishlist",
+            element:<Wishlist></Wishlist>
+          }
+        ]
       },
       {
         path: "/reviews",
