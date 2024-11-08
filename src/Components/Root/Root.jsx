@@ -4,13 +4,10 @@ import { Outlet, useLoaderData } from "react-router-dom";
 import { createContext, useState } from "react";
 export const AddNumber = createContext(0);
 export const AddFavorite = createContext(0);
-export const AddToCart = createContext([]);
 const Root = () => {
   const [number, setNumber] = useState(0);
   const [favorite, setFavorite] = useState(0);
-  const [addCart, setAddCart] = useState([]);
   return (
-    <AddToCart.Provider value={[addCart, setAddCart]}>
       <AddFavorite.Provider value={[favorite, setFavorite]}>
         <AddNumber.Provider value={[number, setNumber]}>
           <div className="font-roboto">
@@ -22,7 +19,6 @@ const Root = () => {
           </div>
         </AddNumber.Provider>
       </AddFavorite.Provider>
-    </AddToCart.Provider>
   );
 };
 
