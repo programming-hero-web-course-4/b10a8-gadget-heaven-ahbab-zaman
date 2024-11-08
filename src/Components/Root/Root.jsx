@@ -17,6 +17,7 @@ const Root = () => {
             </div>
             <Footer></Footer>
           </div>
+          
         </AddNumber.Provider>
       </AddFavorite.Provider>
   );
