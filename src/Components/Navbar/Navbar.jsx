@@ -2,12 +2,8 @@ import { IoMenu } from "react-icons/io5";
 import { BsCart4 } from "react-icons/bs";
 import { GrFavorite } from "react-icons/gr";
 import { NavLink, useLocation } from "react-router-dom";
-import { useContext, useState } from "react";
-import { AddFavorite, AddNumber } from "../Root/Root";
 
 const Navbar = () => {
-  const [number, addNumber] = useContext(AddNumber)
-  const [favorite, setFavorite]= useContext(AddFavorite)
   const location = useLocation();
   const homePage = location.pathname === "/";
   return (
@@ -61,17 +57,9 @@ const Navbar = () => {
         
           <div className="navbar-end space-x-4">
             <div className="flex items-center border justify-center rounded-full bg-white p-2 relative">
-              <BsCart4 className="text-xl text-black"></BsCart4>
-              <span className="absolute w-6 h-6 flex items-center justify-center -top-2 -right-4 bg-slate-300 rounded-full p-1">
-                {number}
-              </span>
-            </div>
+              <BsCart4 className="text-xl text-black"></BsCart4></div>
             <div className="flex items-center border justify-center rounded-full bg-white p-2 relative">
-              <GrFavorite className="text-xl text-black"></GrFavorite>
-              <span className="absolute w-6 h-6 flex items-center justify-center -top-2 -right-4 bg-slate-300 rounded-full p-1">
-                {favorite}
-              </span>
-            </div>
+              <GrFavorite className="text-xl text-black"></GrFavorite></div>
           </div>
         
       </div>

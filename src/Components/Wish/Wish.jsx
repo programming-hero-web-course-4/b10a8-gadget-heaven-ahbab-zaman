@@ -1,10 +1,9 @@
-const CartList = ({ item }) => {
+const Wish = ({ item }) => {
   const { product_title, product_image, description, price } = item;
-
   return (
     <div>
-      <div className="hero my-6">
-        <div className="hero-content flex-col lg:flex-row border rounded-xl">
+      <div className="hero">
+        <div className="hero-content flex-col lg:flex-row border rounded-xl my-4">
           <img
             src={product_image}
             className="w-[200px] rounded-lg shadow-2xl"
@@ -15,6 +14,7 @@ const CartList = ({ item }) => {
             <p className="text-lg font-semibold">
               Price: <span className="text-gray-600">${price}</span>
             </p>
+            <button className="btn btn-primary">Add To Cart</button>
           </div>
         </div>
       </div>
@@ -22,4 +22,4 @@ const CartList = ({ item }) => {
   );
 };
 
-export default CartList;
+export default Wish;

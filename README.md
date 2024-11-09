@@ -10,11 +10,12 @@
 4.React hooks(useState,useEffect, useContext,useNavigate),
 5.Event handling,
 6.React routing,
-7.ContextAPI
+7.ContextAPI,
+8.Local storage
 
-**5. I have used context API for handling and managing data in this project.**
+**5. I have used context API and local storage for handling and managing data in this project.**
 
-**3 key features of this project** :
+**6. **3 key features of this project** :
 
 - View gadget details button.
 - Category button of each card gadget as a sidebar.
