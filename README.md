@@ -15,7 +15,7 @@
 
 **5. I have used context API and local storage for handling and managing data in this project.**
 
-**6. 3 key features of this project** :
+**6. 5 key features of this project** :
 
 - View gadget details button.
 - Category button of each card gadget as a sidebar.
