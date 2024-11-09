@@ -5,6 +5,7 @@ import { PiStarHalfDuotone } from "react-icons/pi";
 import { BsCart4 } from "react-icons/bs";
 import { GrFavorite } from "react-icons/gr";
 import Title from "../Title/Title";
+import { addToCart, addToFavorite } from "../../Utilities/Utilities";
 
 
 const GadgetDetails = () => {
